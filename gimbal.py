@@ -2,11 +2,19 @@ import RPi.GPIO as GPIO
 from gpiozero import Servo
 from time import sleep
 
+#Gyro data that will be provided by Data Correlation team:
+#Yaw - Datatype is float. Measurements in Degrees of Angle. (-180 to 180 Degrees)
+#Pitch - Datatype is float. Measurements in Degrees of Angle. (-90 to 90 Degrees)
+#Roll - Datatype is float. Measurements in Degrees of Angle. (-180 to 180 Degrees)
+
 xGPIO=4
 yGPIO=17
+Yaw = 0
+Pitch = 45
+Roll = 0
 
-xServo = Servo(xGPIO)
-yServo = Servo(yGPIO)
+rotationServo = Servo(xGPIO)
+pitchServo = Servo(yGPIO)
 
 print("Using GPIO4 for xServo")
 print("Using GPIO5 for yServo")
@@ -22,22 +30,26 @@ def SetAngle(angle):
 
 def ServoTest():
     while True:
-        xServo.mid()
-        yServo.mid()
+        rotationServo.mid()
+        pitchServo.mid()
         print("Set to middle position")
         sleep(1)
-        xServo.min()
-        yServo.min()
+        rotationServo.min()
+        pitchServo.min()
         print("Set to minimum position")
         sleep(1)
-        xServo.mid()
-        yServo.mid()
+        rotationServo.mid()
+        pitchServo.mid()
         print("Set to middle position")
         sleep(1)
-        xServo.max()
-        yServo.max()
+        rotationServo.max()
+        pitchServo.max()
         print("Set to maximum position")
         sleep(1)
         
 ServoTest()
 
+while True:
+    #adjustment data goes here
+    import fovFootprintGas 
+    sleep(1)
