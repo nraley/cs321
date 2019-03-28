@@ -3,7 +3,7 @@ from gpiozero import Servo
 from time import sleep
 
 xGPIO=4
-yGPIO=5
+yGPIO=17
 
 xServo = Servo(xGPIO)
 yServo = Servo(yGPIO)
@@ -11,8 +11,6 @@ yServo = Servo(yGPIO)
 print("Using GPIO4 for xServo")
 print("Using GPIO5 for yServo")
 print("Using Gpiozero defaults for the servo class")
-
-ServoTest()
 
 def SetAngle(angle):
     duty = angle / 18 + 2
@@ -40,4 +38,6 @@ def ServoTest():
         yServo.max()
         print("Set to maximum position")
         sleep(1)
+        
+ServoTest()
 

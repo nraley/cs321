@@ -22,7 +22,7 @@ from gpiozero import Servo
 from time import sleep
 
 xGPIO=4
-yGPIO=5
+yGPIO=17
 
 xServo = Servo(xGPIO)
 yServo = Servo(yGPIO)
