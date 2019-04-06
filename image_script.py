@@ -1,9 +1,13 @@
 import picamera
-import datetime
+from datetime import datetime
+import time
 
-time=datetime.datetime.now()
-current=str(time.day)+"-"+str(time.month)+"-"+str(time.year)+"_"+str(time.hour)+":"+str(time.minute)
+time.sleep(2)
 
-with picamera.PiCamera() as camera:
-    camera.resolution = (1280,720)
-    camera.capture("Desktop/cookie/current.jpg")
+for x in range(7260):
+    now = datetime.now()
+    picstr = "/home/pi/CS21proj/Photos" + now.strftime("/%m-%d.%H.%M.%S.jpg")
+
+    with picamera.PiCamera() as camera:
+        camera.resolution = (1280,720)
+        camera.capture(picstr)
