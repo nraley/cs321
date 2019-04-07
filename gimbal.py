@@ -51,5 +51,5 @@ ServoTest()
 
 while True:
     #adjustment data goes here
-    import fovFootprintGas 
+    import fovFootprint
     sleep(1)
