@@ -14,7 +14,7 @@ def photocap():
     now = datetime.now()
     if now > sensor_readjust:
         threading.Timer(3.0, photocap).start()
-        # print("Resting the sensor for 3 seconds to set light levels, photo capture will resume in \n3")
+        print("Resting the sensor for 3 seconds to set light levels, photo capture will resume in \n3")
         # time.sleep(1)
         # print("2")
         # time.sleep(1)
@@ -28,7 +28,7 @@ def photocap():
         with picamera.PiCamera() as camera:
             camera.resolution = (1280, 720)
             camera.capture(picstr)
-        # print("Photo captured at " + now.strftime("%H:%M:%S.%f"))
+        print("Photo captured at " + now.strftime("%H:%M:%S.%f"))
 
     else:
         print("2 hours elapsed, mission complete.")
