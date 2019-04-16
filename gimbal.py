@@ -8,6 +8,7 @@ from time import sleep
 
 xGPIO=4
 yGPIO=17
+
 Yaw = 0
 Pitch = 45
 Roll = 0
@@ -25,13 +26,20 @@ def SetAngle(angle):
     #DutyCycle 2 is full right, and 11.85 is full left
     #DC 2-10.75 gives us a 180 degree arc
     #(10.75-2)/180 = 0.048611
+    #With rotor facing down, 0 degrees is full counterclockwise, 180 is full clockwise
     duty = angle * 0.048611 + 2
     GPIO.output(04, True)
     pwm.ChangeDutyCycle(duty)
     sleep(1)
     GPIO.output(04, False)
     pwm.ChangeDutyCycle(0)
- 
+
+# def FindTilt(pitch):
+#     if
+#
+# def FindHorizon(yaw, pitch, roll):
+#     if
+
 SetAngle(90)
 sleep(1)
 SetAngle(0)
