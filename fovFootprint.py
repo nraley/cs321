@@ -3,7 +3,11 @@ import math
 
 print("FOV Footprint is")
 
-
+alti = 100
+xsensor = 39.6
+ysensor = 26.99
+xgimbal = 30
+ygimbal = 30
 
 def calcFOV(alti, xSensor, ySensor, xgimbal, ygimbal):
     distBot = distTop = distLeft = distRight = xfootprint = yfootprint = 1
@@ -19,3 +23,5 @@ def calcFOV(alti, xSensor, ySensor, xgimbal, ygimbal):
 def toRad(degreeVal):
     pi = math.pi
     return degreeVal*(pi / 180)
+
+calcFOV(alti, xsensor, ysensor, xgimbal, ygimbal)
